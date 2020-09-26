@@ -363,7 +363,7 @@ PlotNormSummary <- function(mSetObj=NA, imgName, format="png", dpi=72, width=NA)
   
   # fig 2
   op<-par(mar=c(7,7,0,0), xaxt="s");
-  boxplot(mSetObj$dataSet$proc[,pre.inx, drop=FALSE], names=namesVec, ylim=rangex.pre, las = 2, col="lightgreen", horizontal=T, show.names=T);
+  boxplot(mSetObj$dataSet$proc[,pre.inx, drop=FALSE], names=namesVec, ylim=rangex.pre, las = 2, col="lightblue", horizontal=T, show.names=T);
   mtext(x.label, 1, 5);
   
   # fig 3
@@ -442,7 +442,7 @@ PlotSampleNormSummary <- function(mSetObj=NA, imgName, format="png", dpi=72, wid
   
   # fig 1
   op<-par(mar=c(5.75,8,4,0), xaxt="s");
-  boxplot(t(mSetObj$dataSet$proc[pre.inx, , drop=FALSE]), names= namesVec, ylim=rangex.pre, las = 2, col="lightgreen", horizontal=T);
+  boxplot(t(mSetObj$dataSet$proc[pre.inx, , drop=FALSE]), names= namesVec, ylim=rangex.pre, las = 2, col="lightblue", horizontal=T);
   mtext("Before Normalization", 3,1)
   
   # fig 2
@@ -453,7 +453,7 @@ PlotSampleNormSummary <- function(mSetObj=NA, imgName, format="png", dpi=72, wid
   
   # fig 3
   op<-par(mar=c(5.75,8,4,2), xaxt="s");
-  boxplot(t(mSetObj$dataSet$norm[norm.inx, , drop=FALSE]), names=namesVec, ylim=rangex.norm, las = 2, col="lightgreen", ylab="", horizontal=T);
+  boxplot(t(mSetObj$dataSet$norm[norm.inx, , drop=FALSE]), names=namesVec, ylim=rangex.norm, las = 2, col="lightblue", ylab="", horizontal=T);
   mtext("After Normalization", 3, 1);
   
   # fig 4
