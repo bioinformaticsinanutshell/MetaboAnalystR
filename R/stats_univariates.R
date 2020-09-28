@@ -419,7 +419,7 @@ PlotTT <- function(mSetObj=NA, imgName, format="png", dpi=72, width=NA){
   
   Cairo::Cairo(file = imgName, unit="in", dpi=dpi, width=w, height=h, type=format, bg="white");
   plot(mSetObj$analSet$tt$p.log, ylab="-log10(p)", xlab=GetVariableLabel(mSetObj$dataSet$type), main=mSetObj$analSet$tt$tt.nm, pch=19,
-       col= ifelse(mSetObj$analSet$tt$inx.imp, "lightblue", "darkgrey"));
+       col= ifelse(mSetObj$analSet$tt$inx.imp, "blue", "darkgrey"));
   abline(h=mSetObj$analSet$tt$thresh, lty=3);
   axis(4); 
   dev.off();
@@ -583,7 +583,7 @@ PlotVolcano <- function(mSetObj=NA, imgName, plotLbl, format="png", dpi=72, widt
   par(mar=c(5,5,3,4));
   vcn <- mSetObj$analSet$volcano;
   MyGray <- rgb(t(col2rgb("black")), alpha=40, maxColorValue=255);
-  MyHighlight <- rgb(t(col2rgb("lightblue")), alpha=80, maxColorValue=255);
+  MyHighlight <- rgb(t(col2rgb("blue")), alpha=80, maxColorValue=255);
   
   if(vcn$paired){
     xlim<-c(-nrow(mSetObj$dataSet$norm)/2, nrow(mSetObj$dataSet$norm)/2)*1.2;
