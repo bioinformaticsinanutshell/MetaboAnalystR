@@ -582,8 +582,8 @@ PlotVolcano <- function(mSetObj=NA, imgName, plotLbl, format="png", dpi=72, widt
   Cairo::Cairo(file = imgName, unit="in", dpi=dpi, width=w, height=h, type=format, bg="white");
   par(mar=c(5,5,3,4));
   vcn <- mSetObj$analSet$volcano;
-  MyGray <- rgb(t(col2rgb("gray")), alpha=40, maxColorValue=255);
-  MyHighlight <- rgb(t(col2rgb("black")), alpha=80, maxColorValue=255);
+  MyGray <- rgb(t(col2rgb("black")), alpha=40, maxColorValue=255);
+  MyHighlight <- rgb(t(col2rgb("navy")), alpha=80, maxColorValue=255);
   
   if(vcn$paired){
     xlim<-c(-nrow(mSetObj$dataSet$norm)/2, nrow(mSetObj$dataSet$norm)/2)*1.2;
@@ -626,7 +626,7 @@ PlotVolcano <- function(mSetObj=NA, imgName, plotLbl, format="png", dpi=72, widt
     lblInx <-  sig.inx & (p.topInx | fc.leftInx);
     if(plotLbl &  sum(lblInx, na.rm=T) > 0){
       text.lbls<-substr(colnames(mSetObj$dataSet$norm)[lblInx],1,14) # some names may be too long
-      text(vcn$fc.log[lblInx], vcn$p.log[lblInx],labels=text.lbls, pos=1, col="red", srt=-20, xpd=T, cex=0.45);
+      #text(vcn$fc.log[lblInx], vcn$p.log[lblInx],labels=text.lbls, pos=1, col="red", srt=-20, xpd=T, cex=0.45);
     }
     
     p.topInx <- GetTopInx(vcn$p.log, 5, T) & (vcn$inx.up);
@@ -634,7 +634,7 @@ PlotVolcano <- function(mSetObj=NA, imgName, plotLbl, format="png", dpi=72, widt
     lblInx <- sig.inx & (p.topInx | fc.rtInx);
     if(plotLbl & sum(lblInx, na.rm=T) > 0){
       text.lbls<-substr(colnames(mSetObj$dataSet$norm)[lblInx],1,14) # some names may be too long
-      text(vcn$fc.log[lblInx], vcn$p.log[lblInx],labels=text.lbls, pos=4, col="blue", srt=20, xpd=T, cex=0.45);
+      text(vcn$fc.log[lblInx], vcn$p.log[lblInx],labels=text.lbls, pos=4, col="blue", srt=20, xpd=T, cex=0.48);
     }
   }
   
