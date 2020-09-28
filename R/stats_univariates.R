@@ -582,8 +582,8 @@ PlotVolcano <- function(mSetObj=NA, imgName, plotLbl, format="png", dpi=72, widt
   Cairo::Cairo(file = imgName, unit="in", dpi=dpi, width=w, height=h, type=format, bg="white");
   par(mar=c(5,5,3,4));
   vcn <- mSetObj$analSet$volcano;
-  MyGray <- rgb(t(col2rgb("black")), alpha=40, maxColorValue=255);
-  MyHighlight <- rgb(t(col2rgb("navy")), alpha=80, maxColorValue=255);
+  MyGray <- rgb(t(col2rgb("gray")), alpha=40, maxColorValue=255);
+  MyHighlight <- rgb(t(col2rgb("black")), alpha=80, maxColorValue=255);
   
   if(vcn$paired){
     xlim<-c(-nrow(mSetObj$dataSet$norm)/2, nrow(mSetObj$dataSet$norm)/2)*1.2;
