@@ -583,7 +583,7 @@ PlotVolcano <- function(mSetObj=NA, imgName, plotLbl, format="png", dpi=72, widt
   par(mar=c(5,5,3,4));
   vcn <- mSetObj$analSet$volcano;
   MyGray <- rgb(t(col2rgb("black")), alpha=40, maxColorValue=255);
-  MyHighlight <- rgb(t(col2rgb("navy")), alpha=80, maxColorValue=255);
+  MyHighlight <- rgb(t(col2rgb("green")), alpha=80, maxColorValue=255);
   
   if(vcn$paired){
     xlim<-c(-nrow(mSetObj$dataSet$norm)/2, nrow(mSetObj$dataSet$norm)/2)*1.2;
@@ -602,7 +602,7 @@ PlotVolcano <- function(mSetObj=NA, imgName, plotLbl, format="png", dpi=72, widt
     lblInx <- p.topInx & sig.upInx & fc.rtInx;
     if(plotLbl & sum(lblInx, na.rm=T) > 0){
       text.lbls<-substr(colnames(mSetObj$dataSet$norm)[lblInx],1,14) # some names may be too long
-      text(vcn$fc.all[1,lblInx], vcn$p.log[lblInx],labels=text.lbls, pos=4, col="blue", srt=30, xpd=T, cex=0.6);
+      text(vcn$fc.all[1,lblInx], vcn$p.log[lblInx],labels=text.lbls, pos=4, col="green", srt=30, xpd=T, cex=0.5);
     }
     
     sig.dnInx <- vcn$inx.p & vcn$inx.down;
@@ -611,7 +611,7 @@ PlotVolcano <- function(mSetObj=NA, imgName, plotLbl, format="png", dpi=72, widt
     lblInx <-p.topInx & sig.dnInx & fc.leftInx;
     if(plotLbl & sum(lblInx, na.rm=T) > 0){
       text.lbls<-substr(colnames(mSetObj$dataSet$norm)[lblInx],1,14) # some names may be too long
-      text(-vcn$fc.all[2,lblInx], vcn$p.log[lblInx],labels=text.lbls, pos=2, col="blue", srt=-30, xpd=T, cex=0.6);
+      text(-vcn$fc.all[2,lblInx], vcn$p.log[lblInx],labels=text.lbls, pos=2, col="green", srt=-30, xpd=T, cex=0.5);
     }
     
   }else{
@@ -626,7 +626,7 @@ PlotVolcano <- function(mSetObj=NA, imgName, plotLbl, format="png", dpi=72, widt
     lblInx <-  sig.inx & (p.topInx | fc.leftInx);
     if(plotLbl &  sum(lblInx, na.rm=T) > 0){
       text.lbls<-substr(colnames(mSetObj$dataSet$norm)[lblInx],1,14) # some names may be too long
-      text(vcn$fc.log[lblInx], vcn$p.log[lblInx],labels=text.lbls, pos=2, col="blue", srt=-30, xpd=T, cex=0.6);
+      text(vcn$fc.log[lblInx], vcn$p.log[lblInx],labels=text.lbls, pos=2, col="red", srt=-30, xpd=T, cex=0.5);
     }
     
     p.topInx <- GetTopInx(vcn$p.log, 5, T) & (vcn$inx.up);
@@ -634,7 +634,7 @@ PlotVolcano <- function(mSetObj=NA, imgName, plotLbl, format="png", dpi=72, widt
     lblInx <- sig.inx & (p.topInx | fc.rtInx);
     if(plotLbl & sum(lblInx, na.rm=T) > 0){
       text.lbls<-substr(colnames(mSetObj$dataSet$norm)[lblInx],1,14) # some names may be too long
-      text(vcn$fc.log[lblInx], vcn$p.log[lblInx],labels=text.lbls, pos=4, col="blue", srt=30, xpd=T, cex=0.6);
+      text(vcn$fc.log[lblInx], vcn$p.log[lblInx],labels=text.lbls, pos=4, col="red", srt=30, xpd=T, cex=0.5);
     }
   }
   
