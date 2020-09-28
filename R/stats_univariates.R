@@ -418,7 +418,7 @@ PlotTT <- function(mSetObj=NA, imgName, format="png", dpi=72, width=NA){
   mSetObj$imgSet$tt <- imgName;
   
   Cairo::Cairo(file = imgName, unit="in", dpi=dpi, width=w, height=h, type=format, bg="white");
-  plot(mSetObj$analSet$tt$p.log, ylab="-log10(p)", xlab=GetVariableLabel(mSetObj$dataSet$type), main=mSetObj$analSet$tt$tt.nm, pch=19,
+  plot(mSetObj$analSet$tt$p.log, ylab="-log10(p)", xlab="Proteins", main=mSetObj$analSet$tt$tt.nm, pch=19,
        col= ifelse(mSetObj$analSet$tt$inx.imp, "darkblue", "darkgrey"));
   abline(h=mSetObj$analSet$tt$thresh, lty=3);
   axis(4); 
