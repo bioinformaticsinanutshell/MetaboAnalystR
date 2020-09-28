@@ -583,7 +583,7 @@ PlotVolcano <- function(mSetObj=NA, imgName, plotLbl, format="png", dpi=72, widt
   par(mar=c(5,5,3,4));
   vcn <- mSetObj$analSet$volcano;
   MyGray <- rgb(t(col2rgb("black")), alpha=40, maxColorValue=255);
-  MyHighlight <- rgb(t(col2rgb("green")), alpha=80, maxColorValue=255);
+  MyHighlight <- rgb(t(col2rgb("darkgreen")), alpha=80, maxColorValue=255);
   
   if(vcn$paired){
     xlim<-c(-nrow(mSetObj$dataSet$norm)/2, nrow(mSetObj$dataSet$norm)/2)*1.2;
