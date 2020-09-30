@@ -638,7 +638,7 @@ PlotHeatMap <- function(mSetObj=NA, imgName, format="png", dpi=72, width=NA, dat
     
     pheatmap::pheatmap(t(hc.dat), 
              annotation=annotation, 
-             fontsize=8, fontsize_row=4, 
+             fontsize=8, fontsize_row=3, 
              clustering_distance_rows = smplDist,
              clustering_distance_cols = smplDist,
              clustering_method = clstDist, 
